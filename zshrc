@@ -47,6 +47,8 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 alias vim="nvim"
 alias ls="ls --color"
+alias cls="clear"
+alias k="kubectl"
 
 eval "$(fzf --zsh)"
 eval "$(/usr/local/Homebrew/bin/brew shellenv)"
