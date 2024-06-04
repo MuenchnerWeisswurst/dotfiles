@@ -1,0 +1,72 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+set syntax on
+set number relativenumber
+set ideajoin
+
+set clipboard on
+set clipboard+=unnamed
+set showmode
+let mapleader="\<Space>"
+map gI <Action>(GotoImplementation)
+map gd <Action>(GotoDeclaration)
+map <leader>lR <Action>(FindUsages)
+map <leader>lr <Action>(RenameElement)
+map <leader>ff <Action>(GotoFile)
+map <leader>fw <Action>(FindInPath)
+map <leader>s <Action>(GotoSymbol)
+map <leader>ld <Action>(ShowErrorDescription)
+map <leader>gg <Action>(Vcs.ChangesView)
+map <leader>la <Action>(ShowIntentionActions)
+map <Tab>l <Action>(MoveEditorToOppositeTabGroup)
+map <Tab>h <Action>(MoveEditorToOppositeTabGroup)
+map <leader>bc <Action>(CloseAllEditorsButActive)
+map <co> <Action>(JumpToLastWindows)
+
+map <Tab> <Action>(EditorDown)
+map <Tab> <Action>(NextTab)
+map <S-Tab> <Action>(PreviousTab)
+map <leader><Tab> <Action>(Switcher)
+sethandler <c-h> a:vim
+sethandler <c-l> a:vim
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+
+" Find more examples here: https://jb.gg/share-ideavimrc
